@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     const checkLoggedIn = async () => {
       if (localStorage.getItem('token')) {
         try {
-          const res = await fetch(`${API_URL}/api/users/profile`, {
+          const res = await fetch(`${API_URL}/api/user/profile`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -115,7 +115,7 @@ export const AuthProvider = ({ children }) => {
     setError(null);
     
     try {
-      const res = await fetch(`${API_URL}/api/users/profile`, {
+      const res = await fetch(`${API_URL}/api/user/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
